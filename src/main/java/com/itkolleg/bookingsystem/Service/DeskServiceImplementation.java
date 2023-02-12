@@ -15,13 +15,14 @@ public class DeskServiceImplementation implements DeskService{
     }
 
     /**
+     * Adds a desk entity to the database.
+     * Returns the added desk.
      * @param desk
-     * @return
+     * @return desk
      */
     @Override
     public Desk addDesk(Desk desk) {
-
-        return null;
+        return this.dbAccessDesks.addDesk(desk);
     }
 
     /**
@@ -29,7 +30,7 @@ public class DeskServiceImplementation implements DeskService{
      */
     @Override
     public List<Desk> getAllDesk() {
-        return null;
+        return this.dbAccessDesks.getAllDesk();
     }
 
     /**
@@ -39,7 +40,7 @@ public class DeskServiceImplementation implements DeskService{
      */
     @Override
     public Desk getDeskById(Long id) throws DeskNotFoundException {
-        return null;
+        return this.dbAccessDesks.getDeskById(id);
     }
 
     /**
@@ -49,7 +50,7 @@ public class DeskServiceImplementation implements DeskService{
      */
     @Override
     public Desk updateDeskById(Long id) throws DeskNotFoundException {
-        return null;
+        return this.dbAccessDesks.updateDeskById(id);
     }
 
     /**
@@ -58,6 +59,6 @@ public class DeskServiceImplementation implements DeskService{
      */
     @Override
     public void deleteDeskById(Long id) throws DeskDeletionNotPossibleException {
-
+        this.dbAccessDesks.deleteDeskById(id);
     }
 }

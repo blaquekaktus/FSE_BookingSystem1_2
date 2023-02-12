@@ -3,7 +3,7 @@ package com.itkolleg.bookingsystem.Domains;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -21,9 +21,9 @@ public class Desk {
     private int nrOfMonitors;
 
     @ElementCollection
-    private ArrayList<Port>port;
+    private List<Port> port;
 
-    public Desk(String deskNr, int nrOfMonitors, ArrayList<Port>port){
+    public Desk(String deskNr, int nrOfMonitors, List<Port>port){
         this.deskNr=deskNr;
         this.nrOfMonitors=nrOfMonitors;
         this.port=port;

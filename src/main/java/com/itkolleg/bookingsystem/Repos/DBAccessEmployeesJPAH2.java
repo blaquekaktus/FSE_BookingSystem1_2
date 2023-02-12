@@ -61,7 +61,13 @@ public class DBAccessEmployeesJPAH2 implements DBAccessEmployees {
      */
     @Override
     public Employee updateEmployeeById(Long id) throws EmployeeNotFoundException {
-        return null;
+        Optional<Employee> EmployeeOptional = employeeRepo.findById(id);
+        if (EmployeeOptional.isPresent()) {
+            //TO DO: implement method
+            return EmployeeOptional.get();
+        } else {
+            throw new EmployeeNotFoundException();
+        }
     }
 
     /**
@@ -74,7 +80,7 @@ public class DBAccessEmployeesJPAH2 implements DBAccessEmployees {
             this.employeeRepo.deleteById(id);
         } catch(Exception e){
             System.out.println(e.getCause() + e.getClass().getName());
-            throw new EmployeeDeletionNotPossibleException("Employee could not be deleted! \n Possible causes: Employee has current Bookings!");
+            throw new EmployeeDeletionNotPossibleException("Employee could not be deleted! \n Possible causes: Current Bookings for Employee exists!");
         }
     }
 }

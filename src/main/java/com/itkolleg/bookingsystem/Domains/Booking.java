@@ -18,11 +18,11 @@ public class Booking {
     private Long id;
 
     @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name = "employee_id")
+    //@JoinColumn(name = "employee_id")
     private Employee employee;
 
     @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name = "desk_id")
+    //@JoinColumn(name = "desk_id")
     private Desk desk;
 
     private Date bookingStart;
