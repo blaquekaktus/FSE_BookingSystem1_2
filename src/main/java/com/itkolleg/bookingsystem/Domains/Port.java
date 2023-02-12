@@ -1,6 +1,9 @@
 package com.itkolleg.bookingsystem.Domains;
 
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
@@ -11,6 +14,8 @@ import lombok.*;
 @Getter
 @ToString
 public class Port {
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Size(min = 2)
