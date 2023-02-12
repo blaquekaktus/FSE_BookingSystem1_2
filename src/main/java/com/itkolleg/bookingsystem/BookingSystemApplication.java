@@ -1,9 +1,9 @@
 package com.itkolleg.bookingsystem;
 
 import com.itkolleg.bookingsystem.Domains.Role;
-import com.itkolleg.bookingsystem.Domains.User;
-import com.itkolleg.bookingsystem.Repos.UserJPARepo;
-import com.itkolleg.bookingsystem.Service.DBAccessUsers;
+import com.itkolleg.bookingsystem.Domains.Employee;
+import com.itkolleg.bookingsystem.Repos.EmployeeJPARepo;
+import com.itkolleg.bookingsystem.Service.DBAccessEmployees;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -15,7 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BookingSystemApplication implements ApplicationRunner {
 
     @Autowired
-    DBAccessUsers dbAccessUsers;
+    DBAccessEmployees dbAccessEmployees;
     public static void main(String[] args) {
         SpringApplication.run(BookingSystemApplication.class, args);
     }
@@ -24,10 +24,12 @@ public class BookingSystemApplication implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("Hallo Sonja, you beautiful soul!");
 
-        User user1 = new User("Sonja", "Lechner", "Blaque", "sonja@email.com", "password", Role.Admin);
-        //User user2 = new User("Kesira", "Lechner", "", "Kesira@email.com", "password", Role.P_User);
-        //User user3 = new User("Camille", "Lechner", "Cammy", "Camille@email.com", "password", Role.Operator);
+        Employee  employee1 = new Employee("Sonja", "Lechner", "Blaque", "sonja@email.com", "password", Role.ADMIN);
+        Employee employee2 = new Employee("Kesira", "Lechner", "", "Kesira@email.com", "password", Role.P_EMPLOYEE);
+        Employee employee3 = new Employee("Camille", "Lechner", "Cammy", "Camille@email.com", "password", Role.OPERATOR);
 
-        d
+        dbAccessEmployees.addEmployee(employee1);
+        dbAccessEmployees.addEmployee(employee2);
+        dbAccessEmployees.addEmployee(employee3);
     }
 }

@@ -18,19 +18,19 @@ public class Booking {
     private Long id;
 
     @ManyToOne(fetch=FetchType.EAGER)
-    //@JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 
     @ManyToOne(fetch=FetchType.EAGER)
-
+    @JoinColumn(name = "desk_id")
     private Desk desk;
 
     private Date bookingStart;
     private Date bookingEnd;
     private Timestamp bookingTime;
 
-    public Booking(User user, Desk desk, Date bookingStart, Date bookingEnd, Timestamp bookingTime){
-        this.user=user;
+    public Booking(Employee employee, Desk desk, Date bookingStart, Date bookingEnd, Timestamp bookingTime){
+        this.employee=employee;
         this.desk=desk;
         this.bookingStart=bookingStart;
         this.bookingEnd=bookingEnd;
