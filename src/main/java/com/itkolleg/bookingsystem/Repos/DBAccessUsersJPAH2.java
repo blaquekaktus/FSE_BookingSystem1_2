@@ -4,10 +4,12 @@ import com.itkolleg.bookingsystem.Domains.User;
 import com.itkolleg.bookingsystem.Exceptions.UserDeletionNotPossibleException;
 import com.itkolleg.bookingsystem.Exceptions.UserNotFoundException;
 import com.itkolleg.bookingsystem.Service.DBAccessUsers;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component
 public class DBAccessUsersJPAH2 implements DBAccessUsers {
 
     UserJPARepo userRepo;

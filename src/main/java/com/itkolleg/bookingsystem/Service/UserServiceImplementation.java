@@ -3,9 +3,11 @@ package com.itkolleg.bookingsystem.Service;
 import com.itkolleg.bookingsystem.Domains.User;
 import com.itkolleg.bookingsystem.Exceptions.UserDeletionNotPossibleException;
 import com.itkolleg.bookingsystem.Exceptions.UserNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserServiceImplementation implements UserService{
 
     private DBAccessUsers dbAccessUsers;
