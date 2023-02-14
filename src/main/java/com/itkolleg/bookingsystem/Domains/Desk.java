@@ -23,6 +23,11 @@ public class Desk {
     @ElementCollection
     private List<Port> port;
 
+
+    @ManyToOne
+    //@JoinColumn(name = "room_id")
+    private Room room;
+
     public Desk(String deskNr, int nrOfMonitors, List<Port>port){
         this.deskNr=deskNr;
         this.nrOfMonitors=nrOfMonitors;

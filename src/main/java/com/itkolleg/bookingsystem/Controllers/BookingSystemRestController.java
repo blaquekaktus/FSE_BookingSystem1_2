@@ -1,12 +1,16 @@
 package com.itkolleg.bookingsystem.Controllers;
 
-import com.itkolleg.bookingsystem.Domains.Booking;
 import com.itkolleg.bookingsystem.Domains.Desk;
+import com.itkolleg.bookingsystem.Domains.DeskBooking;
 import com.itkolleg.bookingsystem.Domains.Employee;
-import com.itkolleg.bookingsystem.Exceptions.*;
-import com.itkolleg.bookingsystem.Service.BookingService;
-import com.itkolleg.bookingsystem.Service.DeskService;
-import com.itkolleg.bookingsystem.Service.EmployeeService;
+import com.itkolleg.bookingsystem.Exceptions.BookingExceptions.BookingNotFoundException;
+import com.itkolleg.bookingsystem.Exceptions.DeskExeceptions.DeskNotFoundException;
+import com.itkolleg.bookingsystem.Exceptions.DeskExeceptions.DeskValidationException;
+import com.itkolleg.bookingsystem.Exceptions.EmployeeExceptions.EmployeeNotFoundException;
+import com.itkolleg.bookingsystem.Exceptions.EmployeeExceptions.EmployeeValidationException;
+import com.itkolleg.bookingsystem.Service.DeskBookings.DeskBookingService;
+import com.itkolleg.bookingsystem.Service.Desks.DeskService;
+import com.itkolleg.bookingsystem.Service.Employee.EmployeeService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -21,12 +25,12 @@ import java.util.List;
 public class BookingSystemRestController {
     EmployeeService employeeService;
     DeskService deskService;
-    BookingService bookingService;
+    DeskBookingService deskBookingService;
 
-    public BookingSystemRestController(EmployeeService employeeService, DeskService deskService, BookingService bookingService){
+    public BookingSystemRestController(EmployeeService employeeService, DeskService deskService, DeskBookingService deskBookingService){
         this.employeeService=employeeService;
         this.deskService=deskService;
-        this.bookingService=bookingService;
+        this.deskBookingService=deskBookingService;
     }
 
     @GetMapping("api/v1/employees/")
@@ -40,7 +44,7 @@ public class BookingSystemRestController {
     }
 
     @PostMapping("api/v1/employees/")
-    public ResponseEntity<Employee>addEmployee(@Valid @RequestBody Employee employee, BindingResult bindingResult) throws EmployeeValidationException{
+    public ResponseEntity<Employee>addEmployee(@Valid @RequestBody Employee employee, BindingResult bindingResult) throws EmployeeValidationException {
         String errors = "";
         if(bindingResult.hasFieldErrors()) {
             for (ObjectError error : bindingResult.getAllErrors()) {
@@ -81,14 +85,14 @@ public class BookingSystemRestController {
         }
     }
 
-    @GetMapping("api/v1/bookings/")
-    public ResponseEntity<List<Booking>> getAllBookings(){
-        return ResponseEntity.ok(this.bookingService.getAllBookings());
+    @GetMapping("api/v1/deskbookings/")
+    public ResponseEntity<List<DeskBooking>> getAllDeskBookings(){
+        return ResponseEntity.ok(this.deskBookingService.getAllDeskBookings());
     }
 
     @GetMapping("api/v1/bookings/{employeeID}")
-    public ResponseEntity<List<Booking>> getBookingByEmployeeID(@PathVariable Long employeeID) throws BookingNotFoundException, EmployeeNotFoundException {
-        return ResponseEntity.ok(this.bookingService.getAllBookingsByEmployeeID(employeeID));
+    public ResponseEntity<List<DeskBooking>> getBookingByEmployeeID(@PathVariable Long employeeID) throws BookingNotFoundException, EmployeeNotFoundException {
+        return ResponseEntity.ok(this.deskBookingService.getDeskBookingsByEmployeeID(employeeID));
     }
 
 }
