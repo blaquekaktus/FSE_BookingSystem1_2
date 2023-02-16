@@ -1,0 +1,113 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "fname": "John",
+      "lname": "Doe",
+      "nick": null,
+      "email": "johndoe@example.com",
+      "password": "password123",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "fname": "Jane",
+      "lname": "Smith",
+      "nick": "janes",
+      "email": "janesmith@example.com",
+      "password": "password123",
+      "role": "OPERATOR"
+    },
+    {
+      "id": 3,
+      "fname": "David",
+      "lname": "Lee",
+      "nick": null,
+      "email": "davidlee@example.com",
+      "password": "password123",
+      "role": "N_EMPLOYEE"
+    },
+    {
+      "id": 4,
+      "fname": "Sarah",
+      "lname": "Brown",
+      "nick": "sarahb",
+      "email": "sarahbrown@example.com",
+      "password": "password123",
+      "role": "P_EMPLOYEE"
+    },
+    {
+      "id": 5,
+      "fname": "Michael",
+      "lname": "Johnson",
+      "nick": "mikej",
+      "email": "michaeljohnson@example.com",
+      "password": "password123",
+      "role": "OPERATOR"
+    },
+    {
+      "id": 6,
+      "fname": "Emily",
+      "lname": "Davis",
+      "nick": "emilyd",
+      "email": "emilydavis@example.com",
+      "password": "password123",
+      "role": "N_EMPLOYEE"
+    },
+    {
+      "id": 7,
+      "fname": "Jason",
+      "lname": "Garcia",
+      "nick": null,
+      "email": "jasongarcia@example.com",
+      "password": "password123",
+      "role": "N_EMPLOYEE"
+    },
+    {
+      "id": 8,
+      "fname": "Melissa",
+      "lname": "Wilson",
+      "nick": "melissaw",
+      "email": "melissawilson@example.com",
+      "password": "password123",
+      "role": "P_EMPLOYEE"
+    },
+    {
+      "id": 9,
+      "fname": "Robert",
+      "lname": "Martin",
+      "nick": "robertm",
+      "email": "robertmartin@example.com",
+      "password": "password123",
+      "role": "OPERATOR"
+    },
+    {
+      "id": 10,
+      "fname": "Amanda",
+      "lname": "Lee",
+      "nick": "amandal",
+      "email": "amandalee@example.com",
+      "password": "password123",
+      "role": "N_EMPLOYEE"
+    },
+    {
+      "id": 11,
+      "fname": "William",
+      "lname": "Gonzalez",
+      "nick": null,
+      "email": "williamgonzalez@example.com",
+      "password": "password123",
+      "role": "ADMIN"
+    },
+    {
+      "id": 12,
+      "fname": "Linda",
+      "lname": "Hernandez",
+      "nick": "lindah",
+      "email": "lindahernandez@example.com",
+      "password": "password123",
+      "role": "P_EMPLOYEE"
+    }
+  ]
+}
+
