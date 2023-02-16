@@ -13,9 +13,9 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class FBEmployeeController {
     @Autowired
-    private FBEmployeeService employeeService;
+    private FBEmployeeService fbEmployeeService;
 
     public String createEmployee(@RequestBody Employee employee) throws ExecutionException, InterruptedException {
-        return employeeService.createEmployee(employee);
+        return fbEmployeeService.createEmployee(employee);
     }
 }

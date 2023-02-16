@@ -1,9 +1,9 @@
 package com.itkolleg.bookingsystem;
 
 import com.itkolleg.bookingsystem.Domains.Desk;
+import com.itkolleg.bookingsystem.Domains.Employee;
 import com.itkolleg.bookingsystem.Domains.Port;
 import com.itkolleg.bookingsystem.Domains.Role;
-import com.itkolleg.bookingsystem.Domains.Employee;
 import com.itkolleg.bookingsystem.Service.DBAccessDesks;
 import com.itkolleg.bookingsystem.Service.DBAccessEmployees;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +11,12 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.util.ArrayList;
 
 @SpringBootApplication
-
+@ComponentScan("com.itkolleg.bookingsystem.Service")
 public class BookingSystemApplication implements ApplicationRunner {
 
     @Autowired
