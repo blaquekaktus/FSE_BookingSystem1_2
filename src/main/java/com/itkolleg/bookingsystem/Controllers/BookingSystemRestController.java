@@ -1,11 +1,9 @@
 package com.itkolleg.bookingsystem.Controllers;
 
+import com.itkolleg.bookingsystem.Domains.Booking;
 import com.itkolleg.bookingsystem.Domains.Desk;
 import com.itkolleg.bookingsystem.Domains.Employee;
-import com.itkolleg.bookingsystem.Exceptions.DeskNotFoundException;
-import com.itkolleg.bookingsystem.Exceptions.DeskValidationException;
-import com.itkolleg.bookingsystem.Exceptions.EmployeeNotFoundException;
-import com.itkolleg.bookingsystem.Exceptions.EmployeeValidationException;
+import com.itkolleg.bookingsystem.Exceptions.*;
 import com.itkolleg.bookingsystem.Service.BookingService;
 import com.itkolleg.bookingsystem.Service.DeskService;
 import com.itkolleg.bookingsystem.Service.EmployeeService;
@@ -83,5 +81,14 @@ public class BookingSystemRestController {
         }
     }
 
+    @GetMapping("api/v1/bookings/")
+    public ResponseEntity<List<Booking>> getAllBookings(){
+        return ResponseEntity.ok(this.bookingService.getAllBookings());
+    }
+
+    @GetMapping("api/v1/bookings/{employeeID}")
+    public ResponseEntity<List<Booking>> getBookingByEmployeeID(@PathVariable Long employeeID) throws BookingNotFoundException, EmployeeNotFoundException {
+        return ResponseEntity.ok(this.bookingService.getAllBookingsByEmployeeID(employeeID));
+    }
 
 }

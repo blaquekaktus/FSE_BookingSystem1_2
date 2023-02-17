@@ -1,9 +1,7 @@
 package com.itkolleg.bookingsystem;
 
-import com.itkolleg.bookingsystem.Domains.Desk;
-import com.itkolleg.bookingsystem.Domains.Port;
-import com.itkolleg.bookingsystem.Domains.Role;
-import com.itkolleg.bookingsystem.Domains.Employee;
+import com.itkolleg.bookingsystem.Domains.*;
+import com.itkolleg.bookingsystem.Service.DBAccessBooking;
 import com.itkolleg.bookingsystem.Service.DBAccessDesks;
 import com.itkolleg.bookingsystem.Service.DBAccessEmployees;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +10,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 @SpringBootApplication
@@ -23,6 +22,9 @@ public class BookingSystemApplication implements ApplicationRunner {
 
     @Autowired
     DBAccessDesks dbAccessDesks;
+
+    @Autowired
+    DBAccessBooking dbAccessBooking;
 
     public static void main(String[] args) {
         SpringApplication.run(BookingSystemApplication.class, args);
@@ -84,5 +86,19 @@ public class BookingSystemApplication implements ApplicationRunner {
         dbAccessDesks.addDesk(desk3);
 
         System.out.println("\nDesks added to database");
+
+        LocalDateTime startDate = LocalDateTime.of(2023,10, 20,8,30,00);
+        LocalDateTime endDate = LocalDateTime.of(2023,10, 20,17,30,00);
+        LocalDateTime bookingTime = LocalDateTime.now();
+
+        Booking booking1 =  new Booking(employee1, desk1, startDate, endDate, bookingTime);
+        Booking booking2 =  new Booking(employee2, desk2, startDate, endDate, bookingTime);
+        Booking booking3 =  new Booking(employee3, desk3, startDate, endDate, bookingTime);
+
+        dbAccessBooking.createBooking(booking1);
+        dbAccessBooking.createBooking(booking2);
+        dbAccessBooking.createBooking(booking3);
+
+        System.out.println("\nBookings made");
     }
 }

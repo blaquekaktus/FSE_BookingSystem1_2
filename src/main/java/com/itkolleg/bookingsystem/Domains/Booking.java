@@ -3,8 +3,7 @@ package com.itkolleg.bookingsystem.Domains;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Date;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @AllArgsConstructor
@@ -25,11 +24,11 @@ public class Booking {
     //@JoinColumn(name = "desk_id")
     private Desk desk;
 
-    private Date bookingStart;
-    private Date bookingEnd;
-    private Timestamp bookingTime;
+    private LocalDateTime bookingStart;
+    private LocalDateTime bookingEnd;
+    private LocalDateTime bookingTime;
 
-    public Booking(Employee employee, Desk desk, Date bookingStart, Date bookingEnd, Timestamp bookingTime){
+    public Booking(Employee employee, Desk desk, LocalDateTime bookingStart, LocalDateTime bookingEnd, LocalDateTime bookingTime){
         this.employee=employee;
         this.desk=desk;
         this.bookingStart=bookingStart;
