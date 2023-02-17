@@ -1,5 +1,9 @@
 package com.itkolleg.bookingsystem;
 
+import com.itkolleg.bookingsystem.Domains.Desk;
+import com.itkolleg.bookingsystem.Domains.Employee;
+import com.itkolleg.bookingsystem.Domains.Port;
+import com.itkolleg.bookingsystem.Domains.Role;
 import com.itkolleg.bookingsystem.Domains.*;
 import com.itkolleg.bookingsystem.Service.DBAccessBooking;
 import com.itkolleg.bookingsystem.Service.DBAccessDesks;
