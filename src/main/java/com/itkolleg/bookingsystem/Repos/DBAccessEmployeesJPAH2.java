@@ -8,9 +8,18 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+/**
 
+ This class implements the {@link DBAccessEmployees} interface using JPA and H2 Database
+ and provides methods to add, get, update, and delete employees from the EmployeeJPARepo
+ repository.
+ @author Sonja Lechner
+ @version 1.0
+ @since 12.02.2023
+ */
 @Component
 public class DBAccessEmployeesJPAH2 implements DBAccessEmployees {
+
 
     EmployeeJPARepo employeeRepo;
 

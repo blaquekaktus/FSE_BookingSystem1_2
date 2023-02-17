@@ -3,9 +3,11 @@ package com.itkolleg.bookingsystem.Service;
 import com.itkolleg.bookingsystem.Domains.Desk;
 import com.itkolleg.bookingsystem.Exceptions.DeskDeletionNotPossibleException;
 import com.itkolleg.bookingsystem.Exceptions.DeskNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DeskServiceImplementation implements DeskService{
 
     private DBAccessDesks dbAccessDesks;

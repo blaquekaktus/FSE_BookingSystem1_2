@@ -27,7 +27,6 @@ public class BookingSystemApplication implements ApplicationRunner {
     public static void main(String[] args) {
         SpringApplication.run(BookingSystemApplication.class, args);
     }
-
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("\n\nApp is up and running\n");
