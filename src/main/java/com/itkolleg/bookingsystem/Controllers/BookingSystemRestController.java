@@ -1,7 +1,7 @@
 package com.itkolleg.bookingsystem.Controllers;
 
 import com.itkolleg.bookingsystem.Domains.Desk;
-import com.itkolleg.bookingsystem.Domains.DeskBooking;
+import com.itkolleg.bookingsystem.Domains.Booking.DeskBooking;
 import com.itkolleg.bookingsystem.Domains.Employee;
 import com.itkolleg.bookingsystem.Exceptions.BookingExceptions.BookingNotFoundException;
 import com.itkolleg.bookingsystem.Exceptions.DeskExeceptions.DeskNotFoundException;

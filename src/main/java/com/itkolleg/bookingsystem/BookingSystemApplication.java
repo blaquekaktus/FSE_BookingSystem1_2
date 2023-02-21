@@ -1,10 +1,12 @@
 package com.itkolleg.bookingsystem;
 
-import com.itkolleg.bookingsystem.Domains.*;
+import com.itkolleg.bookingsystem.Domains.Booking.DeskBooking;
+import com.itkolleg.bookingsystem.Domains.Desk;
+import com.itkolleg.bookingsystem.Domains.Employee;
+import com.itkolleg.bookingsystem.Domains.Port;
+import com.itkolleg.bookingsystem.Domains.Role;
 import com.itkolleg.bookingsystem.Service.Desks.DBAccessDesks;
 import com.itkolleg.bookingsystem.Service.Employee.DBAccessEmployees;
-import com.itkolleg.bookingsystem.Service.DeskBookings.DBAccessDeskBookings;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,18 +15,23 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.itkolleg.bookingsystem")
 
 public class BookingSystemApplication implements ApplicationRunner {
 
-    @Autowired
+    final
     DBAccessEmployees dbAccessEmployees;
 
-    @Autowired
+    final
     DBAccessDesks dbAccessDesks;
 
-    @Autowired
-    DBAccessDeskBookings dbAccessDeskBookings;
+
+    //DBAccessDeskBookings dbAccessDeskBookings;
+
+    public BookingSystemApplication(DBAccessEmployees dbAccessEmployees, DBAccessDesks dbAccessDesks){
+        this.dbAccessDesks = dbAccessDesks;
+        this.dbAccessEmployees = dbAccessEmployees;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(BookingSystemApplication.class, args);
@@ -95,10 +102,10 @@ public class BookingSystemApplication implements ApplicationRunner {
         DeskBooking deskBooking2 =  new DeskBooking(employee2, desk2, startDate, endDate, bookingTime);
         DeskBooking deskBooking3 =  new DeskBooking(employee3, desk3, startDate, endDate, bookingTime);
 
-        dbAccessDeskBookings.createDeskBooking(deskBooking1);
-        dbAccessDeskBookings.createDeskBooking(deskBooking2);
-        dbAccessDeskBookings.createDeskBooking(deskBooking3);
+        //dbAccessDeskBookings.createDeskBooking(deskBooking1);
+        //dbAccessDeskBookings.createDeskBooking(deskBooking2);
+        //dbAccessDeskBookings.createDeskBooking(deskBooking3);
 
-        System.out.println("\nBookings made");
+        //System.out.println("\nBookings made");
     }
 }

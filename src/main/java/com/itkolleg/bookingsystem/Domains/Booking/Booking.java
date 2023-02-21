@@ -22,8 +22,6 @@ public abstract class Booking {
     //@JoinColumn(name = "employee_id")
     private Employee employee;
 
-
-
     private LocalDateTime bookingStart;
     private LocalDateTime bookingEnd;
     private LocalDateTime bookingTime;

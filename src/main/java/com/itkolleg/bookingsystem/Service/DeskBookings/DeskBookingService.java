@@ -18,7 +18,7 @@ public interface DeskBookingService {
     List<DeskBooking> getDeskBookingsByDeskId(Long deskID) throws DeskNotFoundException;
     DeskBooking updateDeskBookingByEmployeeId(Long employeeID) throws EmployeeNotFoundException;
     DeskBooking updateDeskBookingByDeskId(Long deskID) throws EmployeeNotFoundException;
-   void deleteDeskBookingByEmployeeId(Long employeeID) throws EmployeeNotFoundException;
+    void deleteDeskBookingByEmployeeId(Long employeeID) throws EmployeeNotFoundException;
     void deleteDeskBookingByDeskId(Long deskID) throws DeskNotFoundException;
 
 
